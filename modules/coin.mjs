@@ -68,7 +68,16 @@ function countFlips(array) {
   for (var i=0; i<array.length; i++){
     array[i] == 'heads' ? xCounter++:yCounter++;
   }
-  return {heads: xCounter, tails: yCounter}
+  if (xCounter == 0){
+    return {tails: yCounter}
+  }
+  else if (yCounter == 0){
+    return {heads: xCounter}
+  }
+  else{
+    return {heads: xCounter, tails: yCounter}
+  }
+  
 }
 
 export {countFlips}
@@ -83,10 +92,12 @@ export {countFlips}
  * returns: { call: 'tails', flip: 'heads', result: 'lose' }
  */
 
-function flipACoin(call) {
-
+function flipACoin(calls) {
+  var flips = coinFlip()
+  return calls == flips ? {call: calls, flip: flips, result: 'win'}:{call: calls, flip: flips, result: 'lose'};
 }
 
+export {flipACoin}
 
 /** Export 
  * 
