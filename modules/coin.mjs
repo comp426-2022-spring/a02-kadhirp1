@@ -15,9 +15,11 @@
  */
 
 function coinFlip() {
-
+  return (Math.floor(Math.random() * 2) == 0 ) ? 'heads' : 'tails';
 }
 
+export { coinFlip }
+//console.log(coinFlip())
 /** Multiple coin flips
  * 
  * Write a function that accepts one parameter (number of flips) and returns an array of 
@@ -38,8 +40,14 @@ function coinFlip() {
  */
 
 function coinFlips(flips) {
-
+   var arr = []
+   for (let i=0;i <flips; i++){
+     arr[i] = coinFlip();
+   }
+   return arr
 }
+
+export { coinFlips }
 
 /** Count multiple flips
  * 
@@ -55,9 +63,15 @@ function coinFlips(flips) {
  */
 
 function countFlips(array) {
-
+  var xCounter = 0;
+  var yCounter = 0;
+  for (var i=0; i<array.length; i++){
+    array[i] == 'heads' ? xCounter++:yCounter++;
+  }
+  return {heads: xCounter, tails: yCounter}
 }
 
+export {countFlips}
 /** Flip a coin!
  * 
  * Write a function that accepts one input parameter: a string either "heads" or "tails", flips a coin, and then records "win" or "lose". 
