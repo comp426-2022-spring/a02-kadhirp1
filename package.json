@@ -6,7 +6,8 @@
   "main": "flip.js",
   "scripts": {
     "flip": "node flip.js",
-    "test": "node flip.js"
+    "test": "node flip.js",
+    "flips" : "node flips.js"
   },
   "repository": {
     "type": "git",

@@ -41,6 +41,10 @@ export { coinFlip }
 
 function coinFlips(flips) {
    var arr = []
+   if (flips == null || flips == 0){
+     arr[0] = coinFlip();
+     return arr
+   }
    for (let i=0;i <flips; i++){
      arr[i] = coinFlip();
    }
