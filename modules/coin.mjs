@@ -98,6 +98,14 @@ export {countFlips}
 
 function flipACoin(calls) {
   var flips = coinFlip()
+  if (calls == null){
+    var str = "Error: no input."
+    return str
+  }
+  if (calls != 'heads' && calls != 'tails'){
+    var str = "Usage: node guess-flip.js --call=[heads|tails]"
+    return str
+  }
   return calls == flips ? {call: calls, flip: flips, result: 'win'}:{call: calls, flip: flips, result: 'lose'};
 }
 
